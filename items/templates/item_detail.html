@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row d-flex  justify-content-center" align="center">
+    <div class="col-lg-8  col-md-10 col-sm-10 col-xs-10 bg-white rounded item-container p-3 "  >
+        <div class="row header" >
+            <img class="col-md-6 col-sm-12" src="{{ item.image.url }}" height="400" alt="item_image_{{ item.id }}">
+
+            <div class="col-md-6 col-sm-12">
+                <h3>{{ item.title|capfirst }}</h3>
+                <p class="fst-italic">{{ item.category }}</p>
+
+                <p> <span class="fw-bold">Created on: </span> {{ item.created_date|date:"M d Y" }} by {{ item.giver }}</p>
+
+                {% if item.brand %}
+                    <p><span class="fw-bold">Brand: </span> {{ item.brand }}</p>
+                {% endif %}
+
+                <p><span class="fw-bold">Condition: </span> {{ item.condition }}</p>
+            </div>
+        </div>
+
+        <div class="item_description_box mt-3 mb-5">
+            <h5>Description</h5>
+            {% if item.description %}
+                <p>{{ item.description }}</p>
+            {% endif %}
+        </div>
+
+        <p><span class="fw-bold">Located in: </span> {{ item.city }}</p>
+        <p><span class="fw-bold">Delivery Options: </span> {{ item.delivery }}</p>
+
+        <div class="contact_box mt-5">
+            <h5>Contact {{ item.giver }} for details if you are interested </h5>
+
+            <p><span class="fw-bold">Email: </span>{{ item.email }}</p>
+
+            {% if item.phone %}
+                    <p><span class="fw-bold">Phone Number: </span> {{ item.phone }}</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

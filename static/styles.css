@@ -1,0 +1,63 @@
+
+body{
+    background-color:#e6e8e6;
+}
+
+#logo {
+    height: 60px;
+    width: 60px;
+}
+
+header, footer{
+    height: 80px;
+    background-color: #127780;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    z-index: 1000
+}
+
+footer {
+      bottom: 0;
+      height: 80px;
+}
+
+header a, img, h2 {
+    display: inline-block;
+    color: white;
+    vertical-align:  middle;
+    font-family: Varela Round;
+}
+
+svg :hoover {
+    color: #127780;
+}
+
+a{
+    color: black !important;
+}
+
+button, .search-bar{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.content {
+    padding-top: 100px;
+    padding-bottom: 80px;
+}
+
+h3, h5{
+    color: #127780;
+}
+a:link {
+    text-decoration: none;
+}
+
+.card {
+    width: 90% !important;
+}
+
+.item-container, .card {
+    border: solid #127780 1px
+}

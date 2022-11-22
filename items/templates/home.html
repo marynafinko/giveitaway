@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div>
+    {% if searched %}
+        {% if results_no == 0 %}
+            <h3 class="ms-4">No results found for "{{ searched }}":</h3>
+        {% endif %}
+        {% if results_no == 1 %}
+            <h3 class="ms-4">Found {{ results_no }} result for "{{ searched }}": </h3>
+        {% endif %}
+        {% if results_no > 1 %}
+            <h3 class="ms-4">Found {{ results_no }} results for "{{ searched }}":</h3>
+        {% endif %}
+    {% endif %}
+    <div class="row ms-0 me-0">
+        {% for item in items %}
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2" align="center">
+             <a href="{% url 'item_detail' item.id %}" >
+                <div class="card mb-3" style="width: 200px" >
+                    <img src="{{ item.image.url }}" height="140"  alt="item_image_{{ item.id }}">
+
+                    <div class="card-body">
+                        <h5 class="card-title">{{ item.title|capfirst }}</h5>
+
+                        <p class="fst-italic card-text mb-1">{{ item.category }}</p>
+
+                        {% if item.brand %}
+                            <p class="mt-0 mb-0"> <span class="fw-bold card-text"> Brand: </span> {{ item.brand }}</p>
+                        {% endif %}
+
+                        <p class="mb-0"><span class="fw-bold card-text"> Located in: </span>  {{ item.city }}</p>
+                    </div>
+                </div>
+             </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
