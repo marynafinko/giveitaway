@@ -8,7 +8,7 @@ class CreateNewItem(ModelForm):
         model = Item
         fields = '__all__'
 
-        # Giving styles to form(assigning Bootstrap class " form-control" to each of the fields)
+        # Giving styles to form(assigning Bootstrap class "form-control" to each of the fields)
         labels = {
             'title': '',
             'brand': '',
