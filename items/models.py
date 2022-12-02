@@ -3,6 +3,9 @@ from django.core.validators import RegexValidator
 
 
 class Item(models.Model):
+    """
+    Model representing free item
+    """
 
     # Define choices for Category, Condition and Delivery fields
     CATEGORY_CHOICES = [
