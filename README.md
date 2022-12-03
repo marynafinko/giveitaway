@@ -6,8 +6,9 @@ Give It Away was created to support sustainability of things and fight with cons
 
 ### Tech Stack
 
-Website was created using Django 4.1.3 Web Framework with server-side templating. 
-Pillow 9.3.0 ensures that the images can be uploaded by users and retrieved from the database afterwards.
+Website was created using Django 4 Web Framework with server-side templating. It was made using function based view 
+on purpose to show the developer's knowledge about the topic. 
+Pillow ensures that the images can be uploaded by users and retrieved from the database afterwards.
 Give It Away is operating on SQL Lite 3 database.
 
 ### Installation
