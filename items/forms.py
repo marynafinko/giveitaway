@@ -26,16 +26,18 @@ class CreateNewItem(ModelForm):
             'email': ''
         }
         widgets = {
-            'title': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Title *'}),
+            'title': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Title *'}, required=True),
             'brand': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Item brand (if applicable)'}),
-            'giver': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Your name *'} ),
+            'giver': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Your name *'},  required=True ),
             'description': forms.TextInput(attrs={'class': 'form-control', 'rows': '5', 'placeholder': 'Describe your item in a few sentence'}),
-            'category': forms.Select(attrs={'class': 'form-select'}),
-            'condition': forms.Select(attrs={'class': 'form-select'}),
-            'image': forms.ClearableFileInput(attrs={'class': 'form-control'}),
-            'delivery': forms.Select(attrs={'class': 'form-select'}),
-            'city': forms.TextInput(attrs={'class': 'form-control','placeholder': 'Your city *'}),
+            'category': forms.Select(attrs={'class': 'form-select'}, required=True),
+            'condition': forms.Select(attrs={'class': 'form-select'}, required=True),
+            'image': forms.ClearableFileInput(attrs={'class': 'form-control'}, required=True),
+            'delivery': forms.Select(attrs={'class': 'form-select'}, required=True),
+            'city': forms.TextInput(attrs={'class': 'form-control','placeholder': 'Your city *'}, required=True),
             'phone': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Your phone number'}),
-            'email': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Your email *'}),
+            'email': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Your email *'}, required=True),
         }
+
+
 
